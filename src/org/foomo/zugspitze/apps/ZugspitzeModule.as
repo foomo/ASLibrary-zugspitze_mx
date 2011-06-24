@@ -1,13 +1,13 @@
 package org.foomo.zugspitze.apps
 {
-	import org.foomo.zugspitze.core.ZugspitzeController;
-	import org.foomo.zugspitze.core.ZugspitzeModel;
-	import org.foomo.zugspitze.core.Zugspitze;
-	import org.foomo.zugspitze.events.ZugspitzeEvent;
-
 	import flash.display.DisplayObject;
 
-	import mx.containers.Canvas;
+	import mx.modules.Module;
+
+	import org.foomo.zugspitze.core.Zugspitze;
+	import org.foomo.zugspitze.core.ZugspitzeController;
+	import org.foomo.zugspitze.core.ZugspitzeModel;
+	import org.foomo.zugspitze.events.ZugspitzeEvent;
 
 	[Event(name="zugspitzeControllerChanged", type="org.foomo.zugspitze.events.ZugspitzeEvent")]
 	[Event(name="zugspitzeModelChanged", type="org.foomo.zugspitze.events.ZugspitzeEvent")]
@@ -16,9 +16,9 @@ package org.foomo.zugspitze.apps
 	[Event(name="zugspitzeViewAdd", type="org.foomo.zugspitze.events.ZugspitzeEvent")]
 
 	/**
-	 * Zuspitzimplementation extending Flex Canvas
+	 * Zuspitzimplementation extending Flex Module
 	 */
-	public class CanvasApplication extends mx.containers.Canvas implements IApplication
+	public class ZugspitzeModule extends mx.modules.Module implements IApplication
 	{
 		//-----------------------------------------------------------------------------------------
 		// ~ Variables
@@ -27,7 +27,7 @@ package org.foomo.zugspitze.apps
 		/**
 		 * @private
 		 */
-		private var _zugspitze:Zugspitze;
+		protected var _zugspitze:Zugspitze;
 
 		//-----------------------------------------------------------------------------------------
 		// ~ Constructor
@@ -36,15 +36,16 @@ package org.foomo.zugspitze.apps
 		/**
 		 * Constructor
 		 */
-		public function CanvasApplication()
+		public function ZugspitzeModule()
 		{
 			super();
 			this._zugspitze = new Zugspitze(this);
-			this._zugspitze.addEventListener(ZugspitzeEvent.ZUGSPITZE_VIEW_ADD, this.zugspitzeEventHandler, false, 0, true)
-			this._zugspitze.addEventListener(ZugspitzeEvent.ZUGSPITZE_VIEW_REMOVE, this.zugspitzeEventHandler, false, 0, true)
-			this._zugspitze.addEventListener(ZugspitzeEvent.ZUGSPITZE_VIEW_CHANGED, this.zugspitzeEventHandler, false, 0, true)
-			this._zugspitze.addEventListener(ZugspitzeEvent.ZUGSPITZE_MODEL_CHANGED, this.zugspitzeEventHandler, false, 0, true)
-			this._zugspitze.addEventListener(ZugspitzeEvent.ZUGSPITZE_CONTROLLER_CHANGED, this.zugspitzeEventHandler, false, 0, true)
+			_zugspitze.addEventListener(ZugspitzeEvent.ZUGSPITZE_VIEW_CHANGED, this.zugspitzeEventHandler, false, 0, true)
+			_zugspitze.addEventListener(ZugspitzeEvent.ZUGSPITZE_VIEW_ADD, this.zugspitzeEventHandler, false, 0, true)
+			_zugspitze.addEventListener(ZugspitzeEvent.ZUGSPITZE_VIEW_REMOVE, this.zugspitzeEventHandler, false, 0, true)
+			_zugspitze.addEventListener(ZugspitzeEvent.ZUGSPITZE_MODEL_CHANGED, this.zugspitzeEventHandler, false, 0, true)
+			_zugspitze.addEventListener(ZugspitzeEvent.ZUGSPITZE_CONTROLLER_CHANGED, this.zugspitzeEventHandler, false, 0, true)
+
 		}
 
 		//-----------------------------------------------------------------------------------------
@@ -110,7 +111,7 @@ package org.foomo.zugspitze.apps
 		/**
 		 * Returns Controller instance
 		 */
-		[Bindable(event="zugspitzeControllerChanged")]
+		[Bindable(event="controlelrChanged")]
 		public function get controller():ZugspitzeController
 		{
 			return this._zugspitze.controller;
@@ -132,19 +133,6 @@ package org.foomo.zugspitze.apps
 		public function get view():DisplayObject
 		{
 			return this._zugspitze.view;
-		}
-
-		//-----------------------------------------------------------------------------------------
-		// ~ Overridden methods
-		//-----------------------------------------------------------------------------------------
-
-		/**
-		 * @private
-		 */
-		override protected function commitProperties():void
-		{
-			super.commitProperties();
-			//if (!this._zugspitze.initialized) this._zugspitze.initializeZugspitze();
 		}
 
 		//-----------------------------------------------------------------------------------------
