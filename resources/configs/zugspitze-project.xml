@@ -5,6 +5,7 @@
 	<name>Flex 3 (MX)</name>
 	<description>Flex 3 Zugspitze extension.</description>
 	<dependencies>
+		<id>org.foomo.flash</id>
 		<id>org.foomo.zugspitze.core</id>
 	</dependencies>
 </config>
