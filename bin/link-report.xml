@@ -1,15 +1,26 @@
 <report>
   <scripts>
-    <script name="_94fa3acc11814a1b878a1b80f4ceb0f23e9fb25dd60cae92a68615c1cfc8a8c3_flash_display_Sprite.as" mod="1309771318638" size="1107" optimizedsize="511">
-      <def id="_94fa3acc11814a1b878a1b80f4ceb0f23e9fb25dd60cae92a68615c1cfc8a8c3_flash_display_Sprite" />
+    <script name="/Users/franklin/Workspaces/flex4/zugspitze_mx/src/org/foomo/zugspitze/mx/core/ZugspitzeModule.as" mod="1309794868000" size="2861" optimizedsize="1302">
+      <def id="org.foomo.zugspitze.mx.core:ZugspitzeModule" />
+      <pre id="mx.modules:Module" />
+      <pre id="org.foomo.zugspitze.core:IApplication" />
+      <dep id="org.foomo.zugspitze.core:ZugspitzeModel" />
+      <dep id="org.foomo.zugspitze.core:Zugspitze" />
+      <dep id="AS3" />
+      <dep id="flash.display:DisplayObject" />
+      <dep id="org.foomo.zugspitze.events:ZugspitzeEvent" />
+      <dep id="org.foomo.zugspitze.core:ZugspitzeController" />
+    </script>
+    <script name="_975a2f1532a53f34aca818e15d4f1f98b09cfb2aa46f002986e737d63189f43e_flash_display_Sprite.as" mod="1309794877141" size="1107" optimizedsize="511">
+      <def id="_975a2f1532a53f34aca818e15d4f1f98b09cfb2aa46f002986e737d63189f43e_flash_display_Sprite" />
       <pre id="flash.display:Sprite" />
       <dep id="flash.system:Security" />
       <dep id="AS3" />
     </script>
-    <script name="/Users/franklin/Workspaces/flex4/zugspitze_flex3/src/org/foomo/zugspitze/apps/ZugspitzeApplication.as" mod="1309618758000" size="2900" optimizedsize="1286">
-      <def id="org.foomo.zugspitze.apps:ZugspitzeApplication" />
+    <script name="/Users/franklin/Workspaces/flex4/zugspitze_mx/src/org/foomo/zugspitze/mx/core/ZugspitzeApplication.as" mod="1309794873000" size="2943" optimizedsize="1292">
+      <def id="org.foomo.zugspitze.mx.core:ZugspitzeApplication" />
       <pre id="mx.core:Application" />
-      <pre id="org.foomo.zugspitze.apps:IApplication" />
+      <pre id="org.foomo.zugspitze.core:IApplication" />
       <dep id="org.foomo.zugspitze.core:ZugspitzeModel" />
       <dep id="org.foomo.zugspitze.core:Zugspitze" />
       <dep id="AS3" />
@@ -17,21 +28,10 @@
       <dep id="org.foomo.zugspitze.events:ZugspitzeEvent" />
       <dep id="org.foomo.zugspitze.core:ZugspitzeController" />
     </script>
-    <script name="/Users/franklin/Workspaces/flex4/zugspitze_flex3/src/org/foomo/zugspitze/apps/ZugspitzeModule.as" mod="1309618758000" size="2819" optimizedsize="1296">
-      <def id="org.foomo.zugspitze.apps:ZugspitzeModule" />
-      <pre id="mx.modules:Module" />
-      <pre id="org.foomo.zugspitze.apps:IApplication" />
-      <dep id="org.foomo.zugspitze.core:ZugspitzeModel" />
-      <dep id="org.foomo.zugspitze.core:Zugspitze" />
-      <dep id="AS3" />
-      <dep id="flash.display:DisplayObject" />
-      <dep id="org.foomo.zugspitze.events:ZugspitzeEvent" />
-      <dep id="org.foomo.zugspitze.core:ZugspitzeController" />
-    </script>
-    <script name="/Users/franklin/Workspaces/flex4/zugspitze_flex3/src/org/foomo/zugspitze/apps/ZugspitzeCanvas.as" mod="1309618758000" size="2937" optimizedsize="1342">
-      <def id="org.foomo.zugspitze.apps:ZugspitzeCanvas" />
-      <pre id="org.foomo.zugspitze.apps:IApplication" />
+    <script name="/Users/franklin/Workspaces/flex4/zugspitze_mx/src/org/foomo/zugspitze/mx/core/ZugspitzeCanvas.as" mod="1309794870000" size="2983" optimizedsize="1348">
+      <def id="org.foomo.zugspitze.mx.core:ZugspitzeCanvas" />
       <pre id="mx.containers:Canvas" />
+      <pre id="org.foomo.zugspitze.core:IApplication" />
       <dep id="org.foomo.zugspitze.core:ZugspitzeModel" />
       <dep id="org.foomo.zugspitze.core:Zugspitze" />
       <dep id="AS3" />
@@ -42,7 +42,6 @@
   </scripts>
   <external-defs>
     <ext id="AS3" />
-    <ext id="org.foomo.zugspitze.apps:IApplication" />
     <ext id="flash.display:DisplayObject" />
     <ext id="org.foomo.zugspitze.events:ZugspitzeEvent" />
     <ext id="mx.containers:Canvas" />
@@ -52,6 +51,7 @@
     <ext id="flash.system:Security" />
     <ext id="org.foomo.zugspitze.core:ZugspitzeController" />
     <ext id="mx.core:Application" />
+    <ext id="org.foomo.zugspitze.core:IApplication" />
     <ext id="flash.display:Sprite" />
   </external-defs>
 </report>
