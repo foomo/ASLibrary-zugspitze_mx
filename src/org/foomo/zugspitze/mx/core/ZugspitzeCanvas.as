@@ -25,6 +25,7 @@ package org.foomo.zugspitze.mx.core
 	import org.foomo.zugspitze.core.ZugspitzeController;
 	import org.foomo.zugspitze.core.ZugspitzeModel;
 	import org.foomo.zugspitze.events.ZugspitzeEvent;
+	import org.foomo.zugspitze.zugspitze_internal;
 
 	[Event(name="zugspitzeControllerChange", type="org.foomo.zugspitze.events.ZugspitzeEvent")]
 	[Event(name="zugspitzeModelChange", type="org.foomo.zugspitze.events.ZugspitzeEvent")]
@@ -158,16 +159,17 @@ package org.foomo.zugspitze.mx.core
 		}
 
 		//-----------------------------------------------------------------------------------------
-		// ~ Overridden methods
+		// ~ Overriden methods
 		//-----------------------------------------------------------------------------------------
 
 		/**
-		 * @private
+		 * Call the internal zugspitze commitProperties method
 		 */
 		override protected function commitProperties():void
 		{
+			this._zugspitze.zugspitze_internal::commitProperties();
+
 			super.commitProperties();
-			//if (!this._zugspitze.initialized) this._zugspitze.initializeZugspitze();
 		}
 
 		//-----------------------------------------------------------------------------------------
